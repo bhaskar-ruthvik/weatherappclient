@@ -14,7 +14,7 @@ function App() {
   let count=0;
   const [sow,setSow]=useState(false);
 useEffect(()=>{
-  fetch("/localpost",{
+  fetch("https://pacific-reef-72424.herokuapp.com/localpost",{
     method: "POST",
     headers: {"Content-type": "application/json"},
     body: JSON.stringify({"sug" : window.localStorage.getItem("recent") })
@@ -106,7 +106,7 @@ function handleYrSubmit(){
     setButton(true);
     }
     console.log(location)
-  fetch("/yourlocation",{
+  fetch("https://pacific-reef-72424.herokuapp.com/yourlocation",{
     method : "POST",
     headers: {"Content-Type" : "application/json"},
     body: JSON.stringify({"lat" : location.lat, "lon" : location.lon}),
@@ -142,7 +142,7 @@ function handleSubmit(event){
 arr.push(searchArr[0])
 //   prevSearch.push(searchArr[0]);
 //  addSearch(searchArr[0]);
-  fetch("/api",{
+  fetch("https://pacific-reef-72424.herokuapp.com/api",{
     method: "POST",
     headers: {"Content-Type" : "application/json"},
     body: JSON.stringify({"text": newtext}),
