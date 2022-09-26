@@ -1,2 +1,4 @@
 /* /index.html 200
-/api/* https://pacific-reef-72424.herokuapp.com/:splat 200
+/api https://pacific-reef-72424.herokuapp.com/:splat 200
+/yourlocation https://pacific-reef-72424.herokuapp.com/:splat 200
+/localpost https://pacific-reef-72424.herokuapp.com/:splat 200
