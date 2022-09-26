@@ -1,0 +1,534 @@
+
+
+/*-------------------------------element styles----------------------------------*/
+html{
+  color: white;
+}
+h1,h2{
+
+  font-weight:200;
+  text-align:center; 
+}
+
+
+h1{
+  font-family: 'Montserrat', sans-serif;
+  z-index:1;
+
+}
+
+h2{
+  font-family: 'Catamaran', sans-serif;
+  vertical-align: middle;
+  font-size: 2rem;
+}
+
+input:focus{
+  outline:none;
+}
+
+/* --------------------------------class styles----------------------------------*/
+
+.search-box{
+animation: searchbox 2s linear;
+  height:3.5rem;
+  width: 20rem;
+  padding-left:2rem;
+  background-color: black;
+  opacity:0.5;
+  color:white;
+  border-radius : 2rem;
+  outline: none;
+  border-width: 0;
+  font-size: 1rem;
+
+}
+
+.search-button{
+  height:3.5rem;
+  width: 3.5rem;
+  background-color: transparent;
+  border-width: 0;
+
+  padding-top:0.1rem;
+  color: white;
+  opacity:0.4;
+
+}
+.search-heading{
+  
+font-size: 10rem;
+margin-bottom : 0;
+margin-top: 0;
+height:100%
+
+
+}
+.heading{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+
+font-size:2.5rem;
+}
+
+.bgimage.weather:after{
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* ----------------------conditionally rendering the background using ejs------------------------------ */
+body.weather{
+  background-size: 100%;
+}
+body.weather.rain{
+  background-image: url(./bgimage-portrait1.jpg);
+}
+
+.weather.thunderstorm{
+  background-image: url(./bgimage1.jpg);
+}
+
+body.weather.drizzle{
+  background-image: url(./bgimage2.jpg);
+  
+}
+body.weather.snow{
+  background-image: url(./bgimage5.jpg);
+  
+}
+body.weather.clouds{
+  background-image: url(./bgimage3.jpg);
+  
+}
+body.weather.clear{
+  background-image: url(./bgimage6.jpg);
+  
+}
+body.weather.atmosphere{
+  background-image: url(./bgimage7.jpg);
+}
+.bgimage:after {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,.5);
+  top: 0;
+  left: 0;
+  display: block;
+  content: "";
+  z-index: -1;
+}
+.container.weather{
+  position: absolute;
+  top:35%;
+  width:100%;
+
+
+}
+
+.temp-disp{
+height:11rem;
+display: flex;
+justify-content: center;
+}
+
+.temp-dec{
+  margin-top: 7rem;
+  font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search-heading.degree{
+  font-size:5rem;
+  height: 9rem;
+  margin-top: 2.2rem;
+}
+
+
+.time{
+  position: absolute;
+  top:2%;
+  width:100%;
+  text-align: center;
+}
+
+.time-head{
+  font-family: "Poppins" , sans-serif;
+  font-weight: 200;
+}
+
+.minmax{
+  font-family: "Montserrat",sans-serif;
+  font-size:1.5rem;
+  font-weight: 400;
+  opacity:0.8;
+}
+.minmax-div{
+  position:absolute;
+  bottom:0;
+  text-align:center;
+  width:100%;
+}
+.extrainfo{
+  position: absolute;
+  text-align: right;
+  width:98.5%;
+  top: 2%;
+  z-index:1;
+
+}
+.extrainfo h2{
+  font-family : "Montserrat",sans-serif;
+  font-weight:200;
+  line-height:1rem;
+  font-size:1.2rem;
+  text-align: right;
+}
+
+.error{
+  opacity:1;
+
+
+}
+.error.show{
+  animation : error 7s linear;
+}
+.heading.load{
+  opacity: 0;
+}
+.heading.load.show{
+  animation: load 5s linear;
+}
+
+/* ------------------------------defining media queries------------------------------------ */
+@media (min-aspect-ratio: 2/3) and (max-aspect-ratio:3/2){
+  body.main.weather{
+    background-image: url(./neha-maheen-mahfin-K-RyHILcv0Y-unsplash.jpg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+
+  }
+  .button-suggestion{
+    opacity: 0
+  }
+  html,body{
+    height:100%;
+  }
+
+}
+@media (orientation: landscape) {
+
+body.main{
+  background-image:url(./bgimage.jpg);
+  background-size: 100%;
+}
+
+}
+
+
+.form-div{
+
+  position: absolute;
+  top:43%;
+  bottom:40%;
+  width:100%;
+  display: flex;
+  justify-content: center;
+}
+.box-div{
+  position:relative;
+  z-index:2  ;
+  display: flex;
+}
+.heading-div{
+
+  text-align: center;
+  width:100%;
+  position: absolute;
+  top:30%;
+  bottom:65%;
+}
+.button-div{
+  position: relative;
+  bottom: 3.6rem;
+  left: 18rem;
+  width: 3.8rem;
+  z-index:2;
+
+  padding-right:0.5rem;
+}
+
+
+@media (orientation:portrait) {
+  .button-suggestion{
+    opacity:0
+  }
+  .getlocdiv.map{
+ 
+    padding-bottom:2.2rem;
+  }
+  .heading{
+    font-size: 2rem;
+   padding-bottom : 5rem;
+  }
+  .extrainfo{
+    opacity: 0;
+  }
+  html,body{
+    height:100%;
+  }
+  body{
+    background-repeat:no-repeat;
+    background-position: center;
+  }
+  body.main{
+    background-image: url(./bgimage-portrait2.jpg);
+    background-size: auto 100%;
+   
+
+  }
+  .bgimage:after {
+    	background-color: rgba(0,0,0,.6);
+  }
+  .form-div{
+    position: absolute;
+    top:38%;
+    bottom:60%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+  }
+  body.weather{
+    background-size: auto 100%;
+  }
+  body.weather.rain{
+    background-image: url(./bgimage-portrait5.jpg);
+  }
+
+  .weather.thunderstorm{
+    background-image: url(./bgimage-portrait7.jpg);
+  }
+
+  body.weather.drizzle{
+    background-image: url(./bgimage-portrait.jpg);
+
+  }
+  body.weather.snow{
+    background-image: url(./bgimage-portrait6.jpg);
+
+  }
+  body.weather.clouds{
+    background-image: url(./bgimage-portrait4.jpg);
+   
+  }
+  body.weather.clear{
+    background-image: url(./bgimage-portrait8.jpg);
+   
+  }
+  body.weather.atmosphere{
+    background-image: url(./bgimage-portrait3.jpg);
+  }
+}
+
+@media (orientation: portrait) and (min-device-aspect-ratio: 9/21) and (max-device-aspect-ratio:9/18){
+  .extrainfo{
+    opacity : 1;
+  }
+.button-suggestion{
+  opacity:1;
+}
+  
+  
+}
+
+@media (orientation:landscape) and (min-device-aspect-ratio: 9/21) and (max-device-aspect-ratio:9/18){
+
+
+  body.main{
+    background-image:url(./bgimage-portrait2.jpg);
+    background-size: 100%;
+
+  }
+  
+}
+
+/* --------------------------------defining animations------------------------- */
+@keyframes error{
+  from {
+    opacity:0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes load {
+  from{
+    opacity:1;
+  }
+   to{
+    opacity:0;
+   }
+}
+@keyframes searchbox{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:0.5;
+  }
+}
+
+
+.cardholder{
+
+display: flex;
+justify-content: center;
+padding-right: 4rem;
+}
+
+.infocard{
+  background-color: rgba(0,0,0,.3);
+  padding: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 5rem;
+  animation: card 4s linear;
+  height: 7rem;
+  display: flex;
+}
+
+@keyframes card{
+from{
+  
+  transform : rotateX(0deg) rotateY(0deg) rotateZ(0deg); 
+  opacity : 0;
+
+}
+to{
+  
+  transform : rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  opacity: 1;
+}
+}
+
+#windmillsvg{
+  padding-top: 1.8rem;
+}
+
+#windmill{
+  animation : windmill 15s linear ;
+  transform-box : fill-box;
+}
+
+
+
+.svg{
+  padding-top: 2rem;
+  padding-right: 0.5rem;
+}
+.svg.humid{
+  padding-top: 1.5rem;
+}
+
+#search-suggestions{
+  opacity: 0;
+  padding-left: 40rem;
+  padding-top: 24rem;
+}
+
+#search-suggestions.visible{
+  opacity : 1;
+}
+.autocomplete-dropdown-container{
+  width: 22rem;
+  font-family: "Catamaran",sans-serif;
+  background-color: rgba(0,0,0,.5);
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+.suggestion-item.active{
+  background-color: aqua;
+}
+
+.location-button{
+  border-radius : 2rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  background-color: rgba(0,0,0,.5);
+  color: white;
+  opacity: 0.6;
+  border: 0px;
+  z-index: 2;
+}
+.location-button:hover{
+  background-color: black;
+}
+.getloc{
+  height: 3.5rem;
+  width: 3.5rem;
+  z-index:5;
+  border-radius: 2rem;
+  border:0px;
+  background-color: rgba(0,0,0,.5);
+  color: white;
+  opacity: 0.6;
+}
+.getloc:hover{
+  background-color: black;
+}
+.getlocdiv{
+  position: absolute;
+  display: flex;
+  left: 5px;
+  width:50%
+}
+.map{
+  position: relative;
+z-index:10;
+  height: 48rem;
+  width: 50rem;
+}
+.getlocdiv.map{
+position: relative;
+display: flex;
+height: 3.5rem;
+
+top: 4rem;
+}
+.mapclose{
+position: absolute;
+z-index:11;
+}
+.searchitems{
+  position: absolute;
+  top: 4rem;
+  left: 0rem;
+  background-color: rgba(0,0,0,.5);
+  border-radius: 2rem;
+  padding-top:0.3rem;
+  
+  width: 22rem;
+}
+.searchsug{
+ font-family: "Catamaran",sans-serif;
+ margin-top:0;
+margin-bottom:0;
+ height:2rem;
+ padding-left: 2rem;
+ 
+}
+.searchsug:hover{
+  background-color: black;
+}
+
+#recent{
+  padding-left: 1.2rem;
+}
+.mapbutton{
+padding-left: 1.8rem;
+}
+
+.button-suggestion{
+  font-family: "Catamaran",sans-serif;
+  padding-left: 0.5rem;
+}
+
