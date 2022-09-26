@@ -1,4 +1,4 @@
-{ "homepage" : "http:/bhaskar-ruthvik.github.io/weatherapp",
+{ 
   "name": "client",
   "version": "0.1.0",
   "proxy": "https://pacific-reef-72424.herokuapp.com/",
